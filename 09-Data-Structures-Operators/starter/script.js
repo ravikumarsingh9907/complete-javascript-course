@@ -212,24 +212,43 @@
 // console.log('name' && 0 && undefined && 'text');
 
 // TOPIC: Default functions *******
-const store = [];
+// const store = [];
 
-const fun = function (name, experience, salary, roll = 'Web developer') {
-  salary = experience === 'none' ? 8000 : experience * 8000;
+// const fun = function (name, experience, salary, roll = 'Web developer') {
+//   salary = experience === 'none' ? 8000 : experience * 8000;
 
-  const value = {
-    name,
-    roll,
-    salary,
-    experience,
-  };
-  // console.log(value);
-  store.push(value);
-  // console.log(store);
+//   const value = {
+//     name,
+//     roll,
+//     salary,
+//     experience,
+//   };
+//   // console.log(value);
+//   store.push(value);
+//   // console.log(store);
+// };
+
+// fun('Ravi', 5);
+// fun('Sony', 'none');
+// fun('Singh', 3);
+
+// console.log(store);
+
+// // TOPIC: Passing by Value functioins
+const flighNumber = 'LH234';
+const flighDetials = {
+  name: 'Ravi Kumar',
+  passport: 7685493456,
 };
 
-fun('Ravi', 5);
-fun('Sony', 'none');
-fun('Singh', 3);
+const checkIn = function (flightNum, passenger) {
+  flightNum = 'LH432';
+  passenger.name = `Mr. ${passenger.name}`;
+  passenger.passport === 7685493456
+    ? alert('you can check in')
+    : alert('access denied');
+};
 
-console.log(store);
+checkIn(flighNumber, flighDetials);
+console.log(flighNumber);
+console.log(flighDetials);
