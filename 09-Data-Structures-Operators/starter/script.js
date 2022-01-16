@@ -235,20 +235,38 @@
 // console.log(store);
 
 // // TOPIC: Passing by Value functioins
-const flighNumber = 'LH234';
-const flighDetials = {
-  name: 'Ravi Kumar',
-  passport: 7685493456,
+// const flighNumber = 'LH234';
+// const flighDetials = {
+//   name: 'Ravi Kumar',
+//   passport: 7685493456,
+// };
+
+// const checkIn = function (flightNum, passenger) {
+//   flightNum = 'LH432';
+//   passenger.name = `Mr. ${passenger.name}`;
+//   passenger.passport === 7685493456
+//     ? alert('you can check in')
+//     : alert('access denied');
+// };
+
+// checkIn(flighNumber, flighDetials);
+// console.log(flighNumber);
+// console.log(flighDetials);
+
+// TOPIC: Higher Order Functions********
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
 };
 
-const checkIn = function (flightNum, passenger) {
-  flightNum = 'LH432';
-  passenger.name = `Mr. ${passenger.name}`;
-  passenger.passport === 7685493456
-    ? alert('you can check in')
-    : alert('access denied');
+const firstUpperWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
 };
 
-checkIn(flighNumber, flighDetials);
-console.log(flighNumber);
-console.log(flighDetials);
+const callingFun = function (value, fun) {
+  return fun(value);
+};
+
+console.log(callingFun('This Is String', oneWord));
+console.log(callingFun('This Is String', firstUpperWord));
