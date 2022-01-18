@@ -44,18 +44,44 @@
 
 // TOPIC: Higher Order Functions********
 
-const oneWord = function (str) {
-  return str.replace(/ /g, '').toLowerCase();
-};
+// const oneWord = function (str) {
+//   return str.replace(/ /g, '').toLowerCase();
+// };
 
-const firstUpperWord = function (str) {
-  const [first, ...others] = str.split(' ');
-  return [first.toUpperCase(), ...others].join(' ');
-};
+// const firstUpperWord = function (str) {
+//   const [first, ...others] = str.split(' ');
+//   return [first.toUpperCase(), ...others].join(' ');
+// };
 
-const callingFun = function (value, fun) {
-  return fun(value);
-};
+// const callingFun = function (value, fun) {
+//   return fun(value);
+// };
 
-console.log(callingFun('This Is String', oneWord));
-console.log(callingFun('This Is String', firstUpperWord));
+// console.log(callingFun('This Is String', oneWord));
+// console.log(callingFun('This Is String', firstUpperWord));
+
+//TOPIC: writting higher order functions********
+
+//first way of definig function
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+//second way of defining function
+// const greet = greeting => {
+//   return name => {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+//thrid way of defining function
+const greet = greeting => name => console.log(`${greeting} ${name}`);
+
+//first way of passing value
+const greetFun = greet('Hey!');
+greetFun('Ravi');
+
+// second way of passing value
+greet('Hey!')('Shashi');
